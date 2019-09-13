@@ -1,0 +1,367 @@
+/* Nouvelles polices */
+@font-face {
+	font-family: Xirod;
+	src: url("../fonts/xirod.ttf");
+}
+
+@font-face {
+	font-family: Flottflott;
+	src: url("../fonts/Flottflott.ttf");
+}
+
+/* Cellulaires et tablettes */
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-family: Xirod;
+	font-size: 62.5%;
+	color: #2970fc;
+	background-image: url("../img/retrobg.jpg");
+	background-repeat: no-repeat;
+	background-position: center;
+	background-attachment: fixed;
+}
+
+body {
+	margin: 1rem;
+	padding: 1rem 0 2rem 0;
+	font-size: 1.2rem;
+	background-color: rgba(5,0,8,0.7);
+	border-radius: 0.5rem;
+}
+
+header {
+	margin: 0.5rem;
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+header h1 {
+	padding: 1.5rem;
+	padding-top: 2.5rem;
+	font-size: 2.2rem;
+	color: #6823B5;
+	border: 0.2rem solid #B917A8;
+	border-top-left-radius: 1.5rem;
+	border-top-right-radius: 1.5rem;
+}
+
+header h2 {
+	font-family: Flottflott;
+	color: #C439B2;
+	font-style: italic;
+	font-size: 3rem;
+	margin: 1.5rem;
+	margin-top: 0.5rem;
+}
+
+h3 {
+	margin: 1rem 0;
+	margin-top: 2rem;
+	padding-top: 1rem;
+	text-align: center;
+	color: #D461C6;
+	border-top: 0.1rem solid #00FFEC;
+	border-top-left-radius: 1.2rem;
+}
+
+p {
+	padding: 1rem;
+}
+
+a {
+	text-decoration: none;
+	color: #00FFEC;
+	transition: all 0.2s ease;
+}
+
+a:visited {
+	color: #E66C1D;
+}
+
+aside h3 {
+	border-color: #E66C1D;
+}
+
+.summary, .preamble, .explanation, .participation, .benefits, .requirements{
+	margin: 0.5rem;
+	box-shadow: 0 0 #C439B2;
+	transition: all 0.4s ease;
+}
+
+p:first-of-type {
+	border: 0.1rem solid #C439B2;
+	border-bottom: none;
+}
+
+p:nth-of-type(2), p:nth-of-type(3), p:nth-of-type(4) {
+	border-left: 0.1rem solid #C439B2;
+	border-right: 0.1rem solid #C439B2;
+}
+
+p:last-of-type {
+	border: 0.1rem solid #C439B2;
+	border-top: none;
+	border-bottom-right-radius: 1.5rem;
+}
+
+.benefits p {
+	border: 0.1rem solid #C439B2;
+	border-bottom-right-radius: 1.5rem;
+}
+
+footer {
+	margin: 4rem 0;
+	padding: 1rem 2.5rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	float: left;
+	border-top: 0.1rem solid #E66C1D;
+	border-top-right-radius: 1.2rem;
+}
+
+footer a {
+	margin: 1.5rem 0;
+	font-weight: bold;
+}
+
+aside {
+	margin: 2rem 0;
+	float: right;
+}
+
+aside:after {
+	clear: both;
+}
+
+aside ul {
+	list-style-position: inside;
+}
+
+aside li {
+	margin: 1.5rem 0;
+}
+
+.design-selection {
+	display: none;
+}
+
+/* Écrans d'ordinateurs */
+@media screen and (min-width: 960px) {
+	body {
+		background-color: transparent;
+	}
+
+	/* display:grid sur le conteneur principal pour mieux placer
+	les éléments à l'intérieur de la page */
+	.page-wrapper {
+		display: grid;
+		grid-template-columns: 30% 70%;
+		grid-template-rows: auto 1fr auto;
+	}
+
+	a:hover {
+		color: goldenrod;
+	}
+
+	/* Enlève les bordures non-voulues */
+	.summary p, .preamble h3, .preamble p, .explanation h3,
+	.explanation p, .participation h3, .participation p,
+	.benefits h3, .benefits p, .requirements h3, .requirements p {
+		border: none;
+	}
+
+	.intro {
+		text-align: center;
+		grid-column: 1 / 3;
+		grid-row: 1;
+	}
+
+	.summary, .preamble {
+		margin-bottom: 1.5rem;
+	}
+
+	/* Kellum et bannières en images obligatoires */
+	header h1, header h2, .preamble h3 {
+		text-indent: 100%;
+		white-space: nowrap;
+		overflow: hidden;
+
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	.explanation h3, .benefits h3, .participation h3, .requirements h3,
+	.select, .archives, .resources {
+		/*text-indent: 100%; détruit le design de page en élargissant
+		les h3 beaucoup trop, ce qui fait que les divs dans le grid dépassent la
+		largeur de la page. Fix rapide: -200% pour envoyer le texte à gauche au
+		lieu d'à droite. */
+		text-indent: -200%;
+		white-space: nowrap;
+		overflow: hidden;
+
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+	header h1 {
+		background-image: url("../img/h1_header.png");
+	}
+
+	header h2 {
+		background-image: url("../img/h2_header.png");
+	}
+
+	.preamble h3 {
+		background-image: url("../img/preambule_header.png");
+	}
+
+	.explanation h3 {
+		background-image: url("../img/explanation_header.png");
+	}
+
+	.benefits h3 {
+		background-image: url("../img/benefits_header.png");
+	}
+
+	.participation h3 {
+		background-image: url("../img/participation_header.png");
+	}
+
+	.requirements h3 {
+		background-image: url("../img/requirements_header.png");
+	}
+
+	.select {
+		background-image: url("../img/select_header.png");
+	}
+
+	.archives {
+		background-image: url("../img/archives_header.png");
+	}
+
+	.resources {
+		background-image: url("../img/resources_header.png");
+	}
+
+	/* Un second grid (dans le premier grid) pour bien placer les
+	quatres div enfants dans la page */
+	#zen-supporting {
+		grid-column: 2 / 3;
+		grid-row: 2;
+
+		float: right;
+		display: grid;
+		grid-template-columns: 2;
+		grid-template-rows: auto 1fr auto;
+		grid-gap: 0.5rem;
+	}
+
+	/* Bordures roses pour les divs autres que footer et aside */
+	.summary, .preamble, .explanation, .participation, .benefits, .requirements {
+		background-color: rgba(5,0,8,0.7);
+		border: 0.1rem solid #C439B2;
+		border-bottom-right-radius: 1.5rem;
+	}
+
+	.explanation:hover, .participation:hover, .benefits:hover, .requirements:hover,
+	.summary:hover, .preamble:hover {
+		box-shadow: 0.5rem 0.5rem #D461C6;
+	}
+
+	.explanation {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	.participation {
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.benefits {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.requirements {
+		grid-column: 2;
+		grid-row: 2;
+	}
+
+	/* Nouveau footer en ligne horizontale */
+	footer {
+		margin: 0.5rem;
+		flex-direction: row;
+		justify-content: center;
+		grid-column: 1 / 3;
+		grid-row: 3;
+		background-color: rgba(5,0,8,0.7);
+		border: 0.1rem solid #0B5DFF;
+		border-radius: 0;
+		border-top-left-radius: 1.5rem;
+		border-bottom-right-radius: 1.5rem;
+		font-size: 1.6rem;
+	}
+
+	footer a {
+		margin: 2rem 5rem;
+	}
+
+	footer, aside {
+		box-shadow: 0 0 #0B5DFF;
+		transition: all 0.4s ease;
+	}
+
+	footer:hover, aside:hover {
+		box-shadow: 0.5rem 0.5rem #2970FC;
+	}
+
+	/* Nouvel aside à gauche des divs et avec tous les liens */
+	aside {
+		grid-column: 1;
+		grid-row: 2;
+
+		margin: 0.5rem;
+		padding: 1rem;
+		background-color: rgba(5,0,8,0.7);
+		border: 0.1rem solid #0B5DFF;
+		border-top-left-radius: 1.5rem;
+		border-bottom-right-radius: 1.5rem;
+		position: relative;
+		float: left;
+	}
+
+	aside h3 {
+		border: none;
+	}
+
+	.design-selection {
+		display: block;
+	}
+
+	/* Petite décoration de cassette au bas de l'écran */
+	aside ul:after {
+		content: "";
+		display: "table";
+		min-width: 5rem;
+		min-height: 5rem;
+		background-image: url("../img/cassette.png");
+		background-size: contain;
+		background-repeat: no-repeat;
+		position: absolute;
+		bottom: 0;
+		left: 0.5rem;
+		transition: all 3s ease;
+	}
+
+	aside:hover ul:after {
+		transform: rotateZ(3600deg);
+	}
+}
